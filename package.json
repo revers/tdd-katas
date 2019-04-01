@@ -1,0 +1,27 @@
+{
+  "name": "tdd-katas",
+  "version": "1.0.0",
+  "description": "TDD Katas",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -r ts-node/register test/**/*.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/revers/tdd-katas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/revers/tdd-katas/issues"
+  },
+  "homepage": "https://github.com/revers/tdd-katas#readme",
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
+    "ts-node": "^8.0.3",
+    "typescript": "^3.4.1"
+  }
+}
