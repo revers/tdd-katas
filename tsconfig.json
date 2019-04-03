@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "sourceMap": false,
+        "target": "ES2017",
+        "experimentalDecorators": true,
+        "strict": true,
+        "strictPropertyInitialization": false,
+        "outDir": "build",
+        "skipLibCheck": true,
+        "inlineSourceMap": true,
+        "emitDecoratorMetadata": true,
+        "esModuleInterop": true,
+        "inlineSources": true
+    },
+    "include": [
+        "src/**/*",
+        "tests/**/*",
+    ],
+    "exclude": [
+        "node_modules",
+    ]
+}

@@ -25,5 +25,8 @@
     "mocha": "^6.0.2",
     "ts-node": "^8.0.3",
     "typescript": "^3.4.1"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.1.13"
   }
 }
