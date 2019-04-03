@@ -43,7 +43,7 @@ class MessageHandlerFactory {
     constructor(
         @multiInject(TypeSymbols.IMessageHandler)
         private readonly candidates: IMessageHandler[]
-        ) {}
+    ) {}
 
     public create(messageType: MessageType) {
         const suitableCandidates = this.candidates.filter(handler => handler.canHandle(messageType));

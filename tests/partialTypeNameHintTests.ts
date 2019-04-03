@@ -34,7 +34,7 @@ class MessageHandlerFactory {
     constructor(
         @multiInject(TypeSymbols.IMessageHandler)
         private readonly candidates: IMessageHandler[]
-        ) {}
+    ) {}
 
     public create(messageType: MessageType) {
         const suitableCandidates = this.candidates.filter(handler => handler.constructor.name.toLowerCase().startsWith(messageType.toLowerCase()));
@@ -44,7 +44,7 @@ class MessageHandlerFactory {
         } else if (suitableCandidates.length > 1) {
             throw new Error(`Too many suitable candidates found for handling messages of type '${messageType}'.`);
         }
-        
+
         return suitableCandidates[0];
     }
 }
