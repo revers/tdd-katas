@@ -39,7 +39,7 @@ class BarMessageHandler implements IMessageHandler {
 }
 
 @injectable()
-class MessageHandlerFactoryByRoleInterfaceHint {
+class MessageHandlerFactory {
     constructor(
         @multiInject(TypeSymbols.IMessageHandler)
         private readonly candidates: IMessageHandler[]
@@ -53,7 +53,7 @@ class MessageHandlerFactoryByRoleInterfaceHint {
         } else if (suitableCandidates.length > 1) {
             throw new Error(`Too many suitable candidates found for handling messages of type '${messageType}'.`);
         }
-        
+
         return suitableCandidates[0];
     }
 }
@@ -64,10 +64,10 @@ describe("Factory", () => {
         const container = new Container();
         container.bind<IMessageHandler>(TypeSymbols.IMessageHandler).to(FooMessageHandler).inTransientScope();
         container.bind<IMessageHandler>(TypeSymbols.IMessageHandler).to(BarMessageHandler).inTransientScope();
-        container.bind(MessageHandlerFactoryByRoleInterfaceHint).toSelf().inTransientScope();
+        container.bind(MessageHandlerFactory).toSelf().inTransientScope();
 
         // Act
-        const handlerFactory = container.get(MessageHandlerFactoryByRoleInterfaceHint);
+        const handlerFactory = container.get(MessageHandlerFactory);
         const fooHandler = handlerFactory.create(MessageType.foo);
         const barHandler = handlerFactory.create(MessageType.bar);
 
